@@ -25,7 +25,7 @@ class make_ppt() :
 
     def ppt_work(self):
         prs = Presentation()
-        filelist = os.listdir('E:\내꺼\짤\ㅇㅉ\코스프레\[团子图包]dd')  # 읽어오고자 하는 폴더위치 삽입
+        filelist = os.listdir('***')  # 읽어오고자 하는 폴더위치 삽입
         print(filelist)
 
         blank_slide_layout = prs.slide_layouts[6]  # 이미지를 넣을 슬라이드 생성
