@@ -11,26 +11,31 @@ class make_gui(QWidget):
         self.initUI()
 
     def initUI(self):
+        # 버튼
+        self.dir_return = QPushButton('Return', self)
+        self.dir_return.clicked.connect(self.text_changed)
+        self.save_return = QPushButton('Return', self)
+        self.dir_return.clicked.connect(self.ppt_work) ## 피피티 만드는 함수 호출
 
-        btn = QPushButton('Return', self)
-        btn.move(50, 50)
-        btn.resize(btn.sizeHint())
-        # btn.clicked.connect()
-
-        self.lbl1 = QLabel('Enter your sentence:')
-        self.te = QTextEdit()
-        self.te.setAcceptRichText(False)
-        self.lbl2 = QLabel()
-        # text = '\n'.join(f.test())
-        # self.lbl2.setText(text)
+        # 레이블, 텍스트박스
+        self.lbl1 = QLabel('Enter target directory :')
+        self.sub_dir_lbl = QLabel()
+        self.save_lbl = QLabel('Enter save directory :')
+        self.dir_input_te = QTextEdit()
+        self.dir_input_te.setAcceptRichText(False)
+        self.save_dir_te = QTextEdit()
+        self.save_dir_te.setAcceptRichText(False)
 
 
-        self.te.textChanged.connect(self.text_changed)
-
+        # 버티컬 레이아웃
         vbox = QVBoxLayout()
         vbox.addWidget(self.lbl1)
-        vbox.addWidget(self.te)
-        vbox.addWidget(self.lbl2)
+        vbox.addWidget(self.dir_input_te)
+        vbox.addWidget(self.dir_return)
+        vbox.addWidget(self.sub_dir_lbl)
+        vbox.addWidget(self.save_lbl)
+        vbox.addWidget(self.save_dir_te)
+        vbox.addWidget(self.save_return)
         vbox.addStretch()
 
         self.setLayout(vbox)
@@ -40,16 +45,18 @@ class make_gui(QWidget):
         self.show()
 
     def text_changed(self):
-        directory = self.te.toPlainText()
+        directory = self.dir_input_te.toPlainText() # 입력한 경로
         f = make_ppt()
-        text = '\n'.join(f.test(directory))
-        self.lbl2.setText('The target directory is \n' + text)
+        text = '\n'.join(f.pre_view(directory))
+        self.sub_dir_lbl.setText('The sub directory is :\n' + text)
 
-    def center(self): # 가운데 정렬
-        qr = self.frameGeometry()
-        cp = QDesktopWidget().availableGeometry().center()
-        qr.moveCenter(cp)
-        self.move(qr.topLeft())
+    def ppt_work(self):
+        return "yay!"
+    # def center(self): # 가운데 정렬
+    #     qr = self.frameGeometry()
+    #     cp = QDesktopWidget().availableGeometry().center()
+    #     qr.moveCenter(cp)
+    #     self.move(qr.topLeft())
 
 
 
