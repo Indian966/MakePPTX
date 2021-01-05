@@ -17,14 +17,10 @@ import os
 
 
 class make_ppt() :
-    def test(self):
-        dir_list = []
-        root_dir = 'E:\내꺼\짤\ㅇㅉ\코스프레\[团子图包]dd'
-        for (root, dirs, files) in os.walk(root_dir):
-            print("# dir : " + root)
-            for dir_name in dirs :
-                dir_list.append(dir_name)
+    def test(self, directory):
+        dir_list = os.listdir(directory)
         print(dir_list)
+        return dir_list
 
 
     def ppt_work(self):

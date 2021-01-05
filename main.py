@@ -11,18 +11,19 @@ class make_gui(QWidget):
         self.initUI()
 
     def initUI(self):
-        f = make_ppt()
 
-
-        # btn = QPushButton('Quit', self)
-        # btn.move(50, 50)
-        # btn.resize(btn.sizeHint())
-        # btn.clicked.connect(QCoreApplication.instance().quit)
+        btn = QPushButton('Return', self)
+        btn.move(50, 50)
+        btn.resize(btn.sizeHint())
+        # btn.clicked.connect()
 
         self.lbl1 = QLabel('Enter your sentence:')
         self.te = QTextEdit()
         self.te.setAcceptRichText(False)
-        self.lbl2 = QLabel(f.test())
+        self.lbl2 = QLabel()
+        # text = '\n'.join(f.test())
+        # self.lbl2.setText(text)
+
 
         self.te.textChanged.connect(self.text_changed)
 
@@ -39,8 +40,10 @@ class make_gui(QWidget):
         self.show()
 
     def text_changed(self):
-        text = self.te.toPlainText()
-        self.lbl2.setText('The number of words is ' + text)
+        directory = self.te.toPlainText()
+        f = make_ppt()
+        text = '\n'.join(f.test(directory))
+        self.lbl2.setText('The target directory is \n' + text)
 
     def center(self): # 가운데 정렬
         qr = self.frameGeometry()
