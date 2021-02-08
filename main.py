@@ -1,13 +1,24 @@
-from PyQt5.QtCore import QCoreApplication
+from PyQt5.QtCore import QCoreApplication, QThread, pyqtSignal
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QTextEdit, QDesktopWidget, QVBoxLayout
 import sys
 from PPTX_DataSet_Maker import make_ppt
 
+class Thread(QThread) :
+    # sig = pyqtSignal(str)
+    def __init__(self, directory):
+        super().__init__()
+        self.directory = directory
+
+    def run(self) :
+        print("Log : save directory button")
+        f = make_ppt()
+        f.ppt_work(self.directory)
+
 class make_gui(QWidget):
     def __init__(self):
         super().__init__()
+        self.thread = Thread(self)
         print("Log : App Started")
-
         self.initUI()
 
     def initUI(self):
@@ -15,7 +26,7 @@ class make_gui(QWidget):
         self.dir_return = QPushButton('Return', self)
         self.dir_return.clicked.connect(self.text_changed)
         self.save_return = QPushButton('Return', self)
-        self.dir_return.clicked.connect(self.ppt_work) ## 피피티 만드는 함수 호출
+        self.save_return.clicked.connect(self.ppt_work) ## 피피티 만드는 함수 호출
 
         # 레이블, 텍스트박스
         self.lbl1 = QLabel('Enter target directory :')
@@ -25,7 +36,6 @@ class make_gui(QWidget):
         self.dir_input_te.setAcceptRichText(False)
         self.save_dir_te = QTextEdit()
         self.save_dir_te.setAcceptRichText(False)
-
 
         # 버티컬 레이아웃
         vbox = QVBoxLayout()
@@ -45,13 +55,18 @@ class make_gui(QWidget):
         self.show()
 
     def text_changed(self):
-        directory = self.dir_input_te.toPlainText() # 입력한 경로
+        target_dir = self.dir_input_te.toPlainText() # 입력한 경로
         f = make_ppt()
-        text = '\n'.join(f.pre_view(directory))
+        text = '\n'.join(f.pre_view(target_dir))
+
         self.sub_dir_lbl.setText('The sub directory is :\n' + text)
 
     def ppt_work(self):
-        return "yay!"
+        directory = self.save_dir_te.toPlainText()
+        self.i = Thread(directory) #쓰레드에 경로 할당
+        self.i.start()
+
+
     # def center(self): # 가운데 정렬
     #     qr = self.frameGeometry()
     #     cp = QDesktopWidget().availableGeometry().center()

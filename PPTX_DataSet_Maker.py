@@ -17,17 +17,25 @@ import os
 
 
 class make_ppt() :
-    def pre_view(self, directory):
-        dir_list = os.listdir(directory)
+    target = None
+    def pre_view(self,target_dir):
+        target = target_dir
+        dir_list = os.listdir(target_dir)
+        print(dir_list)
+        return dir_list
+
+
+    def ppt_work(self, save_dir):
+        prs = Presentation()
+        dir_list = os.listdir(save_dir)  # 읽어오고자 하는 폴더위치 삽입
         print(dir_list)
 
-        prs = Presentation()
         blank_slide_layout = prs.slide_layouts[6]  # 이미지를 넣을 슬라이드 생성
         title_slide_layout = prs.slide_layouts[0]  # 텍스트를 넣을 슬라이드 생성
         text_slide = prs.slides.add_slide(title_slide_layout)
-        text_slide.shapes.title.text = directory.split("\\")[-1]
+        text_slide.shapes.title.text = save_dir.split("\\")[-1]
         for slidetitle in dir_list:  # case의 숫자만큼 반복
-            dir_path = directory + '/' + slidetitle
+            dir_path = save_dir + '/' + slidetitle
             img_list = os.listdir(dir_path)  # 이미지 파일 불러오기
             text_slide = prs.slides.add_slide(title_slide_layout)
             text_slide.shapes.title.text = slidetitle  # case 번호를 보여주는 슬라이드
@@ -41,55 +49,4 @@ class make_ppt() :
                 image_slide = prs.slides.add_slide(blank_slide_layout)
                 img_path = dir_path + '/' + image
                 pic = image_slide.shapes.add_picture(img_path, left, top, width=width, height=height)
-        prs.save('DataSet.pptx')
-        return dir_list
-
-
-    def ppt_work(self, directory):
-        prs = Presentation()
-        dir_list = os.listdir(directory)  # 읽어오고자 하는 폴더위치 삽입
-        print(dir_list)
-
-        blank_slide_layout = prs.slide_layouts[6]  # 이미지를 넣을 슬라이드 생성
-
-        title_slide_layout = prs.slide_layouts[0]  # 텍스트를 넣을 슬라이드 생성
-
-        for slidetitle in dir_list:  # case의 숫자만큼 반복
-            dir_path = directory + '/' + slidetitle
-            # Transverse_img_temp = 'D:/김민규/최은정교수님/PPT_H' + '/' + slidetitle + '/t'
-
-            img_list = os.listdir(dir_path)  # 이미지 파일 불러오기
-            # T_imglist = os.listdir(Transverse_img_temp)
-
-            text_slide = prs.slides.add_slide(title_slide_layout)
-            text_slide.shapes.title.text = slidetitle  # case 번호를 보여주는 슬라이드
-
-            # text_slide = prs.slides.add_slide(title_slide_layout)
-            # text_slide.shapes.title.text = 'Coronal'
-
-            for image in img_list:  # coronal 이미지 설정
-
-                left = Inches(1)
-                width = Inches(7.5)
-                height = Inches(7.5)
-                top = Inches(0)
-
-                image_slide = prs.slides.add_slide(blank_slide_layout)
-                img_path = dir_path + '/' + image
-                pic = image_slide.shapes.add_picture(img_path, left, top, width=width, height=height)
-
-            # text_slide = prs.slides.add_slide(title_slide_layout)
-            # text_slide.shapes.title.text = 'Transverse'
-            #
-            # for i in T_imglist:  # transverse 이미지 설정
-            #
-            #     left = Inches(0)
-            #     top = Inches(1.5)
-            #     width = Inches(10)
-            #     height = Inches(5)
-            #
-            #     image_slide = prs.slides.add_slide(blank_slide_layout)
-            #     img_path = Transverse_img_temp + '/' + i
-            #     pic = image_slide.shapes.add_picture(img_path, left, top, width=width, height=height)
-
-        prs.save('DataSet1.pptx')  # 파일 이름 (확장자 반드시 포함), D:\김민규\Python 이 경로로 저장됨
+        prs.save('DataSet.pptx')  # 파일 이름 (확장자 반드시 포함), D:\김민규\Python 이 경로로 저장됨
