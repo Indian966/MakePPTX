@@ -12,7 +12,10 @@ class Thread(QThread) :
     def run(self) :
         print("Log : save directory button")
         f = make_ppt()
-        f.ppt_work(self.directory)
+        try :
+            f.ppt_work(self.directory)
+        except :
+            print("Log : Failed making pptx")
 
 class make_gui(QWidget):
     def __init__(self):
