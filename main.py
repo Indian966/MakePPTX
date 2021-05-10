@@ -70,13 +70,6 @@ class make_gui(QWidget):
         self.i.start()
 
 
-    # def center(self): # 가운데 정렬
-    #     qr = self.frameGeometry()
-    #     cp = QDesktopWidget().availableGeometry().center()
-    #     qr.moveCenter(cp)
-    #     self.move(qr.topLeft())
-
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
