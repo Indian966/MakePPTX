@@ -2,19 +2,6 @@ from pptx import Presentation
 from pptx.util import Inches
 import os
 
-'''
-    개발자 : 김민규  
-    연락처 : rlaalsrb4175@gmail.com
-    작업일 : 2020.12.30
-    설명 : 대용량 pptx 이미지 작업을 자동화하는 코드
-    사용하기 앞서 데이터 분류 작업을 잘 해놓을 것
-    D:\김민규\최은정교수님\PPT_H
-    위 폴더를 참고하기 바람
-    출력되는 ppt의 내용은 '환자번호 - coronal - 사진들 - transverse - 사진들'로 반복됨
-    실행 시키려면 F5를 눌러서 상단에 나오는 리스트 중에 Python File클릭
-    이후 수정사항 반영은 ctrl + s 로 저장
-'''
-
 
 class make_ppt() :
     target = ""
@@ -52,4 +39,4 @@ class make_ppt() :
                 img_path = dir_path + '/' + image
                 pic = image_slide.shapes.add_picture(img_path, left, top, width=width, height=height)
         direction = save_dir + '/' + 'DataSet.pptx'
-        prs.save(direction)  # 파일 이름 (확장자 반드시 포함), D:\김민규\Python 이 경로로 저장됨
+        prs.save(direction)  # 파일 이름 (확장자 반드시 포함),
