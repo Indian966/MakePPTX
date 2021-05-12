@@ -12,6 +12,7 @@ class Thread(QThread) :
     def run(self) :
         print("Log : save directory button")
         f = make_ppt()
+        # f.ppt_work(self.directory)
         try :
             f.ppt_work(self.directory)
         except :
