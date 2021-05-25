@@ -1,0 +1,6 @@
+README.md
+setup.py
+MakePPTX.egg-info/PKG-INFO
+MakePPTX.egg-info/SOURCES.txt
+MakePPTX.egg-info/dependency_links.txt
+MakePPTX.egg-info/top_level.txt

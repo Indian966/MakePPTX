@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['PPTX_DataSet_Maker_main.py'],
-             pathex=['D:\\Python\\MakePPT\\main'],
+             pathex=['D:\\Python\\MakePPT\\code'],
              binaries=[],
              datas=[],
              hiddenimports=[],
