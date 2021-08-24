@@ -5,5 +5,9 @@ python:
 branches:
   - master
 
+before_install:
+        - choco install python3
+        - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
+        - python -m pip install --upgrade pip wheel
 script:
   - pytest code/PPTX_DataSet_Maker_main.py
