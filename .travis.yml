@@ -4,3 +4,6 @@ python:
 
 branches:
   - master
+
+script:
+  - pytest code/PPTX_DataSet_Maker_main.py
