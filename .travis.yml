@@ -8,4 +8,4 @@ before_install: "pip install --upgrade pip"
 install:
   - "pip install -r req.txt"
 # command to run tests
-script: pytest /code/PPTX_DataSet_Maker_main.py
+script: pytest ./code/PPTX_DataSet_Maker_main.py
