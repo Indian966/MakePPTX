@@ -6,4 +6,4 @@ branches:
 # command to install dependencies
 install: "pip install -r requirements.txt"
 # command to run tests
-script: pytest main.py
+script: pytest /code/PPTX_DataSet_Maker_main.py
