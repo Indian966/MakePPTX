@@ -1,7 +1,7 @@
 from PyQt5.QtCore import QThread
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QTextEdit, QVBoxLayout
 import sys
-from main.PPTX_DataSet_Maker import make_ppt
+from PPTX_DataSet_Maker import make_ppt
 
 class Thread(QThread) :
     # sig = pyqtSignal(str)
