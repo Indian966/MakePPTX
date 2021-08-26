@@ -4,7 +4,9 @@ python:
 branches:
   - master
 # command to install dependencies
-before_install: "pip install --upgrade pip"
+before_install:
+  - "pip install --upgrade pip"
+  - "pip install python-pptx"
 install:
   - "pip install -r req.txt"
 # command to run tests
