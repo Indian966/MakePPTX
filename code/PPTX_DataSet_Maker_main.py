@@ -2,7 +2,7 @@ from PyQt5.QtCore import QThread
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QTextEdit, QVBoxLayout
 import sys
 import PPTX_DataSet_Maker
-
+#Travis에서 PPTX_DataSet_Maker가 인식이 안됨
 class Thread(QThread) :
     # sig = pyqtSignal(str)
     def __init__(self, directory):
