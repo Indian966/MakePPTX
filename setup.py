@@ -4,7 +4,7 @@ with open("README.md", 'rt', encoding='UTF8') as fh:
     long_description = fh.read()
 
 
-setuptools.setup(
+setup(
     name="MakePPTX",
     version="0.0.1",
     author="김민규",
