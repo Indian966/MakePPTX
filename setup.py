@@ -13,10 +13,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Indian966/MakePPTX",
-    packages= [
-        'PPTX_DataSet_Maker',
-        'PPTX_DataSet_Maker_main'
-        ],
+    packages=find_packages('code', exclude=['test']),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
