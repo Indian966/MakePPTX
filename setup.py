@@ -14,8 +14,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Indian966/MakePPTX",
     packages= [
-        'PPTX_DataSet_Maker.py',
-        'PPTX_DataSet_Maker_main.py'
+        './code/PPTX_DataSet_Maker.py',
+        './code/PPTX_DataSet_Maker_main.py'
         ],
     classifiers=[
         "Programming Language :: Python :: 3",
