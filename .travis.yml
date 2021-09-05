@@ -12,5 +12,7 @@ install:
   - "pip install -r req.txt"
 # command to run tests
 script:
-  - pytest PPTX_DataSet_Maker.py
+  - pytest test_example.py
+#  - pytest PPTX_DataSet_Maker.py
 #  - pytest ./code/PPTX_DataSet_Maker_main.py
+# pytest ./code/PPTX_DataSet_Maker_main.py "The command "pytest ./code/PPTX_DataSet_Maker.py" exited with 5."
