@@ -12,5 +12,5 @@ install:
   - "pip install -r req.txt"
 # command to run tests
 script:
-  - pytest ./code/PPTX_DataSet_Maker.py
+  - pytest PPTX_DataSet_Maker.py
 #  - pytest ./code/PPTX_DataSet_Maker_main.py
