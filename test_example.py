@@ -5,6 +5,6 @@ from .code import PPTX_DataSet_Maker
 
 def test_example():
   assert 1
-
-def pre_view(self,target_dir) :
-  assert len(pre_view("C:\Users\user\Downloads\Test")) > 1
+target_dir = "C:/Users/user/Downloads/Test"
+def pre_view(target_dir) :
+  assert pre_view(target_dir)
