@@ -19,10 +19,8 @@ Travis CI : [![Build Status](https://app.travis-ci.com/Indian966/MakePPTX.svg?br
 
 이 프로그램은 대용량의 사진 자료들을 PPT로 만들어주는 프로그램입니다.
 
-자료의 유형 :
 
-
-'상위 폴더 - 하위 폴더 - 사진자료'
+> '상위 폴더 - 하위 폴더 - 사진자료'
 
 이 형식의 자료 형태를 유지해 주시기 바랍니다.
 
