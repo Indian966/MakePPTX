@@ -28,6 +28,7 @@ Travis CI : [![Build Status](https://app.travis-ci.com/Indian966/MakePPTX.svg?br
 
 ![image](https://user-images.githubusercontent.com/22446076/117937691-3b0ebd80-b341-11eb-8b95-a9184440d53b.png)
 
+------------------------------------
 
 잘못된 예시 1)
 하위 폴더들과 함께 자료가 있으면 안됩니다.
@@ -46,7 +47,7 @@ Travis CI : [![Build Status](https://app.travis-ci.com/Indian966/MakePPTX.svg?br
 
 ![image](https://user-images.githubusercontent.com/22446076/117937834-5d084000-b341-11eb-8016-3304ea318183.png)
 
-
+----------------------------------
 
 사용법 :
 
