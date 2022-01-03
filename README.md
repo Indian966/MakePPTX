@@ -28,26 +28,26 @@ Travis CI : [![Build Status](https://app.travis-ci.com/Indian966/MakePPTX.svg?br
 
 ------------------------------------
 
-잘못된 예시 1)
+#  잘못된 예시 1)
 하위 폴더들과 함께 자료가 있으면 안됩니다.
 
 ![image](https://user-images.githubusercontent.com/22446076/117937722-4530bc00-b341-11eb-9108-27f94a927c7d.png)
 
 
-잘못된 예시 2)
+# 잘못된 예시 2)
 하위 폴더 밑에 또 다른 하위 폴더가 있으면 안됩니다.
 
 ![image](https://user-images.githubusercontent.com/22446076/117937762-4cf06080-b341-11eb-99f4-c5e0ae6902cd.png)
 
 
-잘못된 예시 3)
+# 잘못된 예시 3)
 사진이 아닌 파일이 있으면 안됩니다.
 
 ![image](https://user-images.githubusercontent.com/22446076/117937834-5d084000-b341-11eb-8016-3304ea318183.png)
 
 ----------------------------------
 
-사용법 :
+#사용법 :
 
 ![image](https://user-images.githubusercontent.com/22446076/117937907-6ee9e300-b341-11eb-9f09-d589d339b79c.png)
 
@@ -66,7 +66,7 @@ save directory는 저장하고자 하는 경로를 의미합니다.
 
 
 -----------------
-예시)
+## 예시)
 
 ![image](https://user-images.githubusercontent.com/22446076/117937929-7610f100-b341-11eb-875e-eb691eca3842.png)
 
@@ -74,7 +74,7 @@ save directory는 저장하고자 하는 경로를 의미합니다.
 
 
 -----------------------
-결과 :
+## 결과 :
 ![image](https://user-images.githubusercontent.com/22446076/117937957-7dd09580-b341-11eb-8536-fc25630470e4.png)
 
 PPT파일이 생성되었습니다.
