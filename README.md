@@ -28,26 +28,26 @@ Travis CI : [![Build Status](https://app.travis-ci.com/Indian966/MakePPTX.svg?br
 
 ------------------------------------
 
-#  잘못된 예시 1)
+##  잘못된 예시 1)
 하위 폴더들과 함께 자료가 있으면 안됩니다.
 
 ![image](https://user-images.githubusercontent.com/22446076/117937722-4530bc00-b341-11eb-9108-27f94a927c7d.png)
 
 
-# 잘못된 예시 2)
+## 잘못된 예시 2)
 하위 폴더 밑에 또 다른 하위 폴더가 있으면 안됩니다.
 
 ![image](https://user-images.githubusercontent.com/22446076/117937762-4cf06080-b341-11eb-99f4-c5e0ae6902cd.png)
 
 
-# 잘못된 예시 3)
+## 잘못된 예시 3)
 사진이 아닌 파일이 있으면 안됩니다.
 
 ![image](https://user-images.githubusercontent.com/22446076/117937834-5d084000-b341-11eb-8016-3304ea318183.png)
 
 ----------------------------------
 
-#사용법 :
+# 사용법 :
 
 ![image](https://user-images.githubusercontent.com/22446076/117937907-6ee9e300-b341-11eb-9f09-d589d339b79c.png)
 
