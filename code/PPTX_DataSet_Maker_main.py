@@ -28,9 +28,9 @@ class make_gui(QWidget):
     def initUI(self):
         # 버튼
         self.dir_return = QPushButton('Return', self)
-        self.dir_return.clicked.connect(self.text_changed)
+        self.dir_return.clicked.connect(self.text_changed) # 버튼 누름
         self.save_return = QPushButton('Return', self)
-        self.save_return.clicked.connect(self.ppt_work) ## 피피티 만드는 함수 호출
+        self.save_return.clicked.connect(self.ppt_work) # 피피티 만드는 함수 호출
 
         # 레이블, 텍스트박스
         self.lbl1 = QLabel('Enter target directory :')

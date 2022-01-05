@@ -23,11 +23,13 @@ class make_ppt() :
         title_slide_layout = prs.slide_layouts[0]  # 텍스트를 넣을 슬라이드 생성
         text_slide = prs.slides.add_slide(title_slide_layout)
         text_slide.shapes.title.text = target.split("\\")[-1]
+
         for slidetitle in dir_list:  # case의 숫자만큼 반복
             dir_path = target + '/' + slidetitle
             img_list = os.listdir(dir_path)  # 이미지 파일 불러오기
             text_slide = prs.slides.add_slide(title_slide_layout)
             text_slide.shapes.title.text = slidetitle  # case 번호를 보여주는 슬라이드
+
             for image in img_list:  # 이미지 설정
 
                 left = Inches(1)
@@ -38,5 +40,6 @@ class make_ppt() :
                 image_slide = prs.slides.add_slide(blank_slide_layout)
                 img_path = dir_path + '/' + image
                 pic = image_slide.shapes.add_picture(img_path, left, top, width=width, height=height)
+
         direction = save_dir + '/' + 'DataSet.pptx'
         prs.save(direction)  # 파일 이름 (확장자 반드시 포함),
