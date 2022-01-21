@@ -1,7 +1,9 @@
 from PyQt5.QtCore import QThread
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QTextEdit, QVBoxLayout
 import sys
-import PPTX_DataSet_Maker
+sys.path.append("D:/Python/MakePPTX/code")
+import PPTX_DataSet_Maker as pm
+
 #Travis에서 PPTX_DataSet_Maker가 인식이 안됨
 class Thread(QThread) :
     # sig = pyqtSignal(str)
@@ -11,7 +13,7 @@ class Thread(QThread) :
 
     def run(self) :
         print("Log : save directory button")
-        f = make_ppt()
+        f = pm.make_ppt()
         # f.ppt_work(self.directory)
         try :
             f.ppt_work(self.directory)
@@ -21,22 +23,20 @@ class Thread(QThread) :
 class make_gui(QWidget):
     def __init__(self):
         super().__init__()
+        # self._mutex = QMutex()
+        # self._mutex.lock()
         self.thread = Thread(self)
+        # self._mutex.unlock()
         print("Log : App Started")
         self.initUI()
 
     def initUI(self):
         # 버튼
         self.dir_return = QPushButton('Return', self)
-        try :
-            self.dir_return.clicked.connect(self.text_changed) # 버튼 누름
-        except IndexError:
-            print("IndexError")
+        self.dir_return.clicked.connect(self.text_changed) # 버튼 누름
         self.save_return = QPushButton('Return', self)
-        try :
-            self.save_return.clicked.connect(self.ppt_work) # 피피티 만드는 함수 호출
-        except :
-            pass
+        self.save_return.clicked.connect(self.ppt_work) # 피피티 만드는 함수 호출
+
 
         # 레이블, 텍스트박스
         self.lbl1 = QLabel('Enter target directory :')
@@ -66,15 +66,20 @@ class make_gui(QWidget):
 
     def text_changed(self):
         target_dir = self.dir_input_te.toPlainText() # 입력한 경로
-        f = make_ppt()
+        f = pm.make_ppt()
         text = '\n'.join(f.pre_view(target_dir))
-
         self.sub_dir_lbl.setText('The sub directory is :\n' + text)
 
     def ppt_work(self):
         directory = self.save_dir_te.toPlainText()
+        # self._mutex.lock()
         self.i = Thread(directory) #쓰레드에 경로 할당
+        # self._mutex.unlock()
         self.i.start()
+
+    # def closeEvent(self, event):
+    #     print("Closing the app")
+    #     self.deleteLater()
 
 
 
@@ -82,3 +87,4 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = make_gui()
     sys.exit(app.exec_())
+    # del Programm.window
