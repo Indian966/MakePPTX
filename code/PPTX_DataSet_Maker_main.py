@@ -1,7 +1,6 @@
 from PyQt5.QtCore import QThread
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QTextEdit, QVBoxLayout
 import sys
-sys.path.append("D:/Python/MakePPTX/code")
 import PPTX_DataSet_Maker as pm
 
 #Travis에서 PPTX_DataSet_Maker가 인식이 안됨
@@ -23,10 +22,7 @@ class Thread(QThread) :
 class make_gui(QWidget):
     def __init__(self):
         super().__init__()
-        # self._mutex = QMutex()
-        # self._mutex.lock()
         self.thread = Thread(self)
-        # self._mutex.unlock()
         print("Log : App Started")
         self.initUI()
 
@@ -72,14 +68,8 @@ class make_gui(QWidget):
 
     def ppt_work(self):
         directory = self.save_dir_te.toPlainText()
-        # self._mutex.lock()
         self.i = Thread(directory) #쓰레드에 경로 할당
-        # self._mutex.unlock()
         self.i.start()
-
-    # def closeEvent(self, event):
-    #     print("Closing the app")
-    #     self.deleteLater()
 
 
 
@@ -87,4 +77,3 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = make_gui()
     sys.exit(app.exec_())
-    # del Programm.window

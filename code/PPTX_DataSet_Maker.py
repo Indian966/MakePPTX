@@ -1,7 +1,9 @@
 from pptx import Presentation
 from pptx.util import Inches
 import os
-
+from tqdm import tqdm
+import tkinter as tk
+from tkinter import messagebox as msg
 
 class make_ppt() :
     target = ""
@@ -30,7 +32,7 @@ class make_ppt() :
             text_slide = prs.slides.add_slide(title_slide_layout)
             text_slide.shapes.title.text = slidetitle  # case 번호를 보여주는 슬라이드
 
-            for image in img_list:  # 이미지 설정
+            for image in tqdm(img_list):  # 이미지 설정
 
                 left = Inches(1)
                 width = Inches(7.5)
@@ -42,4 +44,8 @@ class make_ppt() :
                 pic = image_slide.shapes.add_picture(img_path, left, top, width=width, height=height)
 
         direction = save_dir + '/' + 'DataSet.pptx'
-        prs.save(direction)  # 파일 이름 (확장자 반드시 포함),
+        prs.save(direction)  # 파일 이름 (확장자 반드시 포함)
+
+        # root = Tk()
+        # root.withdraw()
+        msg.showinfo('Message', '생성 완료')
