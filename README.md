@@ -3,7 +3,7 @@
 
 [Now testing]
 Travis CI : [![Build Status](https://app.travis-ci.com/Indian966/MakePPTX.svg?branch=master)](https://app.travis-ci.com/Indian966/MakePPTX)
-
+GitHub Actions : [준비중]
 
     개발자 : 김민규  
     연락처 : rlaalsrb4175@gmail.com
