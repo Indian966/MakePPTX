@@ -2,8 +2,8 @@
 불쌍한 사무직 혹은 연구원들을 위한 대용량 이미지들을 삽입한 PPT 파일 생성 프로그램
 
 [Now testing]
-Travis CI : [![Build Status](https://app.travis-ci.com/Indian966/MakePPTX.svg?branch=master)](https://app.travis-ci.com/Indian966/MakePPTX)
-
+Travis CI : [![Build Status](https://app.travis-ci.com/Indian966/MakePPTX.svg?branch=master)](https://app.travis-ci.com/Indian966/MakePPTX) \
+GitHub Actions : [준비중]
 
     개발자 : 김민규  
     연락처 : rlaalsrb4175@gmail.com
@@ -19,7 +19,8 @@ Travis CI : [![Build Status](https://app.travis-ci.com/Indian966/MakePPTX.svg?br
 
 이 프로그램은 대용량의 사진 자료들을 PPT로 만들어주는 프로그램입니다.
 
-
+dist 폴더의 exe파일을 실행하십시오.
+---------------------------------
 > '상위 폴더 - 하위 폴더 - 사진자료'
 
 이 형식의 자료 형태를 유지해 주시기 바랍니다.
@@ -89,4 +90,6 @@ PPT파일이 생성되었습니다.
 사진의 크기는 정사각형으로 맞추어 비율이 안맞을 수 있습니다. \
 제대로 동작이 되지 않는 경우엔 위의 잘못된 예시를 확인해 주시기 바랍니다.\
 사진이 수백장이 넘어가는 경우 분단위의 시간이 소모될 수 있습니다.\
-로그에 에러가 남지 않았다면 기다려주시기 바랍니다.
+로그에 에러가 남지 않았다면 기다려주시기 바랍니다. \
+
+2022.01.27 버그픽스, 프로그래스바 로그에 출력
