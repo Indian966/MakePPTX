@@ -41,7 +41,6 @@ class make_ppt() :
 
                 image_slide = prs.slides.add_slide(blank_slide_layout)
                 img_path = dir_path + '/' + image
-                pic = image_slide.shapes.add_picture(img_path, left, top, width=width, height=height)
 
         direction = save_dir + '/' + 'DataSet.pptx'
         prs.save(direction)  # 파일 이름 (확장자 반드시 포함)
