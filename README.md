@@ -1,8 +1,7 @@
 # MakePPTX
 불쌍한 사무직 혹은 연구원들을 위한 대용량 이미지들을 삽입한 PPT 파일 생성 프로그램
 
-[Now testing]
-Travis CI : [![Build Status](https://app.travis-ci.com/Indian966/MakePPTX.svg?branch=master)](https://app.travis-ci.com/Indian966/MakePPTX) \
+
 GitHub Actions : [준비중]
 
     개발자 : 김민규  
